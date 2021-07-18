@@ -15,9 +15,13 @@ class Kreis extends Figur
   void display() {
    
     Vec2 pos = box2d.getBodyPixelCoord(body);
+    // Rotationswinkel
+    float a = body.getAngle();
+    
     ellipseMode(CENTER);
     pushMatrix();
     translate(pos.x, pos.y);
+    rotate(-a);
     fill(c);
     stroke(0);
     ellipse(0, 0, radius*2, radius*2);
